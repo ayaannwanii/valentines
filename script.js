@@ -7,23 +7,26 @@ const finalScreen = document.getElementById("finalScreen");
 
 let noCount = 0;
 
-// Start romantic music on first click
+// Start background music on first interaction
 document.body.addEventListener("click", () => {
   bgMusic.play();
 }, { once: true });
 
+// No button logic
 noBtn.addEventListener("click", () => {
   noCount++;
 
-  const x = Math.random() * 300 - 150;
-  const y = Math.random() * 150 - 75;
+  const x = Math.random() * 400 - 200;
+  const y = Math.random() * 200 - 100;
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
 
   if (noCount >= 2) {
-    message.textContent = "How can you say No if I am the best ever 😌💖";
+    message.textContent =
+      "How can you say No if I am the best ever 😌💖";
   }
 });
 
+// Yes button logic
 yesBtn.addEventListener("click", () => {
   bgMusic.pause();
   memeSound.play();
