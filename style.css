@@ -1,13 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  height: 100vh;
   margin: 0;
+  height: 100vh;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: "Comic Sans MS", cursive;
 }
 
+/* Main Card */
 .container {
   background: white;
   padding: 40px;
@@ -35,18 +40,20 @@ button {
 }
 
 #yesBtn {
-  background-color: #ff4d6d;
+  background: #ff4d6d;
   color: white;
 }
 
 #noBtn {
-  background-color: #ccc;
+  background: #ccc;
   position: absolute;
-  left: 120px;
+  left: 220px;   /* moved further right */
+  top: 0;
 }
 
+
 #message {
-  margin-top: 25px;
+  margin-top: 20px;
   color: #ff4d6d;
   font-weight: bold;
 }
@@ -54,10 +61,7 @@ button {
 /* Final Screen */
 #finalScreen {
   position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
+  inset: 0;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   display: none;
   justify-content: center;
@@ -66,85 +70,35 @@ button {
 }
 
 /* Heart */
-.heart {
+.heart-wrapper {
   position: relative;
-  width: 220px;
-  height: 200px;
-  background: #ff4d6d;
-  transform: rotate(-45deg);
+  width: 360px;
+  height: 360px;
   animation: pulse 1.2s infinite;
 }
 
-.heart::before,
-.heart::after {
-  content: "";
-  position: absolute;
-  width: 220px;
-  height: 200px;
-  background: #ff4d6d;
-  border-radius: 50%;
-}
-
-.heart::before {
-  top: -110px;
-  left: 0;
-}
-
-.heart::after {
-  left: 110px;
-  top: 0;
-}
-
-/* Wrapper fixes glitch */
-.heart-content {
-  position: absolute;
-  inset: 0;
-  transform: rotate(45deg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.heart-svg {
+  width: 100%;
+  height: 100%;
+  fill: #ff4d6d;
 }
 
 .heart-text {
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 20px;
-  will-change: transform;
-}
-
-/* Wrapper fixes glitch */
-.heart-content {
-  position: absolute;
-  inset: 0;
-  transform: rotate(45deg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.heart-text {
   color: white;
   font-size: 22px;
   font-weight: bold;
-  text-align: center;
   padding: 20px;
-  will-change: transform;
-}
-@keyframes pulse {
-  0% {
-    transform: rotate(-45deg) scale(1);
-  }
-  50% {
-    transform: rotate(-45deg) scale(1.05);
-  }
-  100% {
-    transform: rotate(-45deg) scale(1);
-  }
 }
 
-@keyframes pop {
-  0% { transform: scale(0.5) rotate(-45deg); }
-  100% { transform: scale(1) rotate(-45deg); }
+/* Pulse Animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
 }
