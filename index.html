@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Be My Valentine 💖</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Background Music -->
   <audio id="bgMusic" loop>
     <source src="romantic.mp3" type="audio/mpeg">
   </audio>
 
+  <!-- Meme Sound -->
   <audio id="memeSound">
     <source src="meme.mp3" type="audio/mpeg">
   </audio>
 
+  <!-- Main Card -->
   <div class="container">
     <h1>Will you be my Valentine? 💘</h1>
 
@@ -26,16 +29,21 @@
     <p id="message"></p>
   </div>
 
-  <!-- Final Heart Screen -->
+  <!-- Final Screen -->
   <div id="finalScreen">
-    <div class="heart">
-      <div class="heart-content">
+    <div class="heart-wrapper">
+      <svg viewBox="0 0 512 512" class="heart-svg">
+        <path d="M256 464s-16-14.4-28.8-25.6C140.8 358.4 64 294.4 64 208
+        64 140.8 115.2 96 176 96c35.2 0 68.8 16 80 44.8
+        C267.2 112 300.8 96 336 96c60.8 0 112 44.8 112 112
+        0 86.4-76.8 150.4-163.2 230.4C272 449.6 256 464 256 464z"/>
+      </svg>
+
       <div class="heart-text">
-        CHALL HATT OO<br>
-        AAYI BADI<BR>
-        JAA PDHAII KARR <BR>
-          
-        </div>
+        CHALL HATT<br/>
+        AAYI BADI AASHIQ <br/>
+        JAA PDHAII KARR <br/>
+        
       </div>
     </div>
   </div>
