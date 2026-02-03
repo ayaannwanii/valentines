@@ -12,6 +12,32 @@ body {
   font-family: "Comic Sans MS", cursive;
 }
 
+/* Emoji Layer */
+#emoji-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 6;
+}
+
+.emoji {
+  position: absolute;
+  font-size: 40px;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+
 /* Main Card */
 .container {
   background: white;
@@ -19,6 +45,7 @@ body {
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  z-index: 2;
 }
 
 h1 {
@@ -47,10 +74,9 @@ button {
 #noBtn {
   background: #ccc;
   position: absolute;
-  left: 220px;   /* moved further right */
+  left: 220px;
   top: 0;
 }
-
 
 #message {
   margin-top: 20px;
@@ -66,7 +92,7 @@ button {
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 5;
 }
 
 /* Heart */
@@ -91,12 +117,11 @@ button {
   align-items: center;
   text-align: center;
   color: white;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
   padding: 20px;
 }
 
-/* Pulse Animation */
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.08); }
